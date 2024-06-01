@@ -1,0 +1,188 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Default weight */
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.active-link::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 2px;
+  background: #b30909; /* Change this to the color you want for the underline */
+  position: absolute;
+  bottom: 0;
+}
+
+ /* Card */
+ .card {
+  @apply flex items-center overflow-hidden rounded-lg px-8 py-8 shadow-lg;
+}
+
+/* Controls Container */
+.card__controls-container--height {
+  @apply h-40;
+}
+.card__controls-container--text {
+  @apply text-2xl font-medium leading-7;
+}
+.card__controls-container--flex-row {
+  @apply justify-between;
+}
+.card__controls-container--flex-column {
+  @apply flex-col items-center justify-center;
+}
+.card__controls-container--height-auto {
+  @apply h-auto;
+}
+
+.card__controls-container--padding {
+}
+
+.card__controls-container--margin {
+  @apply mb-7;
+}
+
+/* Stage */
+.stage {
+  @apply mb-10;
+}
+.stage--height {
+  @apply h-52;
+}
+
+
+ /* Stage Card */
+
+ .card__stage--text {
+  @apply text-3xl;
+}
+.card__stage--text-screen-2xl {
+  @apply text-2xl;
+}
+
+.card__stage {
+  @apply h-full bg-white;
+}
+
+/* Start Card */
+.card__start-card--text {
+  @apply text-lg leading-7;
+}
+
+/* Cue Sentence Card */
+
+.card__display--flex-column {
+  @apply flex flex-col items-center justify-center;
+}
+
+/* Results Card */
+
+.card__results-card {
+  @apply flex justify-center;
+}
+
+.card__results-card__response-word--color-error {
+  @apply text-red-600;
+}
+.card__results-card__response-word--color-correct {
+  @apply text-green-600;
+}
+
+.card__results-card__response-word--color-wrong-position {
+  @apply text-yellow-400;
+}
+.card__results-card__grid-item {
+  @apply mx-2 text-center;
+}
+
+.card__results-card button {
+  @apply flex h-5 w-5 items-center justify-center rounded-md text-base font-medium text-white  md:h-5 md:w-5 ;
+}
+
+
+@layer components {
+  .pointer-animations {
+    @apply animate-bounce-x animate-fadeIn;
+  }
+}
